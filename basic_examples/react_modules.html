@@ -1,0 +1,109 @@
+!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Pure React Samples</title>
+</head>
+<body>
+<!-- Target container -->
+<div id="react-container"></div>
+<!-- React library & ReactDOM-->
+<script src="https://unpkg.com/react@15.4.2/dist/react.js"></script>
+<script src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.js"></script>
+<script>
+    /*
+    let componente = React.createElement('h1', null, 'salmon asado');
+    ReactDOM.render(componente, document.getElementById('react-container'))
+
+    let arregloTuja = ['a', 'b', 'c'];
+    let funct = arregloTuja.map((valor, i) => console.log(valor + i))
+    */
+
+    /*
+    let objetoPirata = {
+        displayName: "IngredientsList",
+        addLi(phrase, index) {
+            return React.createElement("li", {key: index}, phrase)
+        },
+        render() {
+            //                          cominezo del tag con ul, despues atributo className, despues lo que va dentro del ul
+            return React.createElement("ul", {"className": "ingredients"}, this.props.items.map(this.addLi))
+        }
+    }
+
+    const IngredientsList = React.createClass(objetoPirata)
+    const items = [
+        "1 lb Salmon",
+        "1 cup Pine Nuts",
+        "2 cups Butter Lettuce",
+        "1 Yellow Squash",
+        "1/2 cup Olive Oil",
+        "3 cloves of Garlic"
+    ]
+    const list = React.createElement(IngredientsList, {items}, null)
+    ReactDOM.render(list, document.getElementById('react-container'))
+    */
+
+    /*
+    // otra forma de crear componentes
+    class IngredientsListExtended extends React.Component {
+        renderListItem(ingredient, i) {
+            return React.createElement("li", {key: i}, ingredient)
+        }
+
+        render() {
+            return React.createElement("ul", {className: "ingredients"}, this.props.items.map(this.renderListItem))
+        }
+    }
+
+    const items = [
+        "1 lb Salmon",
+        "1 cup Pine Nuts",
+        "2 cups Butter Lettuce",
+        "1 Yellow Squash",
+        "1/2 cup Olive Oil",
+        "3 cloves of Garlic"
+    ]
+    const list = React.createElement(IngredientsListExtended, {items}, null)
+    ReactDOM.render(list, document.getElementById('react-container'))
+    */
+
+    /*
+    // stateless functional components
+
+    // usamos {} en vez de [...items] para evitar los puntos
+    const items_asd = [
+        "1 lb Salmon",
+        "1 cup Pine Nuts",
+        "2 cups Butter Lettuce",
+        "1 Yellow Squash",
+        "1/2 cup Olive Oil",
+        "3 cloves of Garlic"
+    ]
+    const createLis = (ingredient, i) => React.createElement("li", {key: i}, ingredient)
+    const listaDeIngredientes = ([...copia_lista]) => React.createElement("ul", {className: 'listaIngredientes'}, copia_lista.map(createLis))
+    ReactDOM.render(listaDeIngredientes(items_asd), document.getElementById('react-container'))
+    */
+
+    // stateless functional components con factories
+    const {render} = ReactDOM;
+    const IngredientsList = ({list}) =>
+        React.DOM.ul(null,
+            list.map((ingredient, i) =>
+                React.DOM.li({key: i}, ingredient)
+            )
+        )
+    const Ingredients = React.createFactory(IngredientsList)
+    const list = [
+        "1 lb Salmon",
+        "1 cup Pine Nuts",
+        "2 cups Butter Lettuce",
+        "1 Yellow Squash",
+        "1/2 cup Olive Oil",
+        "3 cloves of Garlic"
+    ]
+    render(Ingredients({list}), document.getElementById('react-container')
+    )
+</script>
+</body>
+</html>
