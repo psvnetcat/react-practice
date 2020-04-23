@@ -1,8 +1,4 @@
-import React from 'react'
-import {render} from 'react-dom'
-import data from './data/casos'
-
-window.React = React
+import Caso from "./caso";
 
 const Casos = ({casos}) =>
     <article>
@@ -16,9 +12,4 @@ const Casos = ({casos}) =>
         </div>
     </article>
 
-console.log('equisde')
-
-render(
-    <Casos casos={data}/>,
-    document.getElementById("react-container")
-)
+export default Casos
