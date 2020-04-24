@@ -1,4 +1,5 @@
 import Caso from "./caso";
+import React, {Component} from 'react';
 
 const Casos = ({casos}) =>
     <article>
