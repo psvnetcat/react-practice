@@ -1,5 +1,5 @@
 import Producto from "./producto";
-import React, {Component} from 'react';
+import React from 'react';
 
 const Caso = ({nombre, productos, comentarios}) =>
     <section className="detalle-caso">

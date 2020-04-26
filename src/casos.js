@@ -1,5 +1,10 @@
 import Caso from "./caso";
-import React, {Component} from 'react';
+import React from 'react';
+import AddColorForm from "./formulario";
+
+
+const logColor = (title, color) =>
+    console.log(`New Color: ${title} | ${color}`)
 
 const Casos = ({casos}) =>
     <article>
@@ -11,6 +16,7 @@ const Casos = ({casos}) =>
                 <Caso key={i} {...caso} />)
             }
         </div>
+        <AddColorForm onNewColor={logColor}/>
     </article>
 
 export default Casos

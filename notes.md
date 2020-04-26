@@ -156,3 +156,32 @@ DOM element. Stateless functional components will keep your application architec
 ### Alternativa a React.createElement
 
 existe una alternativa, las factories como React.DOM.li o React.DOM.h1
+
+### Validador de propiedades de componentes React (default props y prop types)
+
+el ejemplo de acontinuacion es valido solo para stateless funtional components, el estilo que mas me acomoda para crear
+componentes.
+
+````javascript
+const Summary = ({ingredients, steps}) => 
+    <p>{ingredients}, {steps}</p>
+
+Summary.propTypes = {
+    ingredients: React.PropTypes.number.isRequired,
+    steps: React.PropTypes.number.isRequired
+}
+Summary.defaultProps = {
+    ingredients: 1,
+    steps: 1
+}
+````
+
+existe otra alternativa, parecida a la sintaxis de python:
+````javascript
+const Summary = ({ ingredients=0, steps=0, title='[recipe]' }) => {
+    return <div>
+    <h1>{title}</h1>
+    <p>{ingredients} Ingredients | {steps} Steps</p>
+    </div>
+}
+````
