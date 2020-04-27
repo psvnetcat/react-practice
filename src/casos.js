@@ -3,8 +3,8 @@ import React from 'react';
 import AddColorForm from "./formulario";
 
 
-const logColor = (title, color) =>
-    console.log(`New Color: ${title} | ${color}`)
+const logColor = (name) =>
+    console.log(`New name: ${name}`)
 
 const Casos = ({casos}) =>
     <article>
