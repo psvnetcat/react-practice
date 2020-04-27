@@ -1,7 +1,7 @@
 import Caso from "./caso";
 import React from 'react';
 import AddColorForm from "./formulario";
-
+import "./css/App.css"
 
 const logColor = (name) =>
     console.log(`New name: ${name}`)

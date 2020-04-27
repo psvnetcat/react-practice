@@ -1,5 +1,4 @@
 import React from 'react';
-
 // hacer esto: onNewColor = f => f es un default, en caso de que la función de inverse data flow sea indeterminada
 const AddColorForm = ({onNewColor = f => f}) => {
     let _nombre
@@ -7,7 +6,7 @@ const AddColorForm = ({onNewColor = f => f}) => {
     const submit = e => {
         e.preventDefault()
         // llamada a la funcion externa (desacopla los componentes)
-        onNewColor(_nombre)
+        onNewColor(_nombre.value)
         _nombre.value = ''
         _nombre.focus()
     }
@@ -25,5 +24,6 @@ const AddColorForm = ({onNewColor = f => f}) => {
         </form>
     )
 }
+
 
 export default AddColorForm
