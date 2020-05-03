@@ -8,3 +8,10 @@ I'm reading the book Learning React: Functional Web Development with React and R
 ## Notes
 The file "notes.md" contains the main concepts for me about ES6 features, declarative programming, transpiling
 and React components.
+
+## CSS Framework
+This project uses Bulma as css framework, to compile a new version you have to execute ````npm run css-build```` wich creates
+the App.css file with all the styles.
+
+## Run the app
+In order to run the app, you have to type ````yarn start````.

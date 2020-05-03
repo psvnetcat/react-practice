@@ -8,18 +8,18 @@
     "@testing-library/user-event": "^7.1.2",
     "bulma": "^0.8.2",
     "node-sass": "^4.14.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "css-build": "node-sass --omit-source-map-url src/css/app.scss src/css/App.css",
+    "css-build": "node-sass --omit-source-map-url src/App.sass src/css/App.css",
     "css-watch": "npm run css-build -- --watch",
-    "watch": "npm run css-watch"
+    "start": "react-scripts start && css-watch"
   },
   "eslintConfig": {
     "extends": "react-app"

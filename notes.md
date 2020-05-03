@@ -185,3 +185,6 @@ const Summary = ({ ingredients=0, steps=0, title='[recipe]' }) => {
     </div>
 }
 ````
+### React states
+Stateless functional components are meant to be the children of more complex, stateful components. It’s a good idea to try
+to keep as many of your components as possible stateless.
