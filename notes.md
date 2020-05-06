@@ -185,6 +185,28 @@ const Summary = ({ ingredients=0, steps=0, title='[recipe]' }) => {
     </div>
 }
 ````
+### Refs
+References, or refs, are a feature that allow React components to interact with child
+elements. The most common use case for refs is to interact with UI elements that col‐
+lect input from the user.
+
 ### React states
 Stateless functional components are meant to be the children of more complex, stateful components. It’s a good idea to try
 to keep as many of your components as possible stateless.
+
+### Pistas sobre redux
+redux es mencionado como una libreria third-party que ayuda a implementar un patron de diseño llamado flux, que tiene como objetivo
+reducir la complejidad del manejo de estados en react.
+
+### Component lifecycle
+hay dos ciclos principales:
+
+* mounting lifecycle
+    las principales funciones que hay (para la sintaxis ES6) son:
+    * constructor(props)
+    * componentWillMount()
+    * render()
+    * componentDidMount
+    * componentWillUnmount
+    
+* updating lifecycle
